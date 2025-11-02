@@ -5,79 +5,115 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: url("D:/BMI-Calculator-master/BMI-Calculator-master/ChatGPT Image Nov 2, 2025, 05_02_52 PM.png");
+            background-position: center;
+            margin: 0;
+            padding: 85px;
         }
-        .container {
-            width: 600px;
-            margin: 0 auto;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-        }
-        .box {
-            background-color: rgb(83, 118, 141);
-            width: 550px;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            box-sizing: border-box;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-</head> <center><h1>BMI CALCULATOR</h1></center>
-<body background="https://t4.ftcdn.net/jpg/03/75/77/33/360_F_375773340_J82AiwK5gLpGyO9kDM7NMjfNapF7VW4e.jpg" >
 
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(19px);
+            box-shadow: 0 0 25px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 0 0 5px rgba(0,0,0,0.8);
+        }
+
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 25px;
+            border: none;
+            background: #1c82f0;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #005ec2;
+        }
+
+        #result {
+            margin-top: 15px;
+            color: #fff;
+            font-size: 18px;
+            text-shadow: 0 0 5px black;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        /* Button hidden by default */
+        #precautionsBtn {
+            display: none;
+            margin-top: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
     <div class="container">
-        <div class="box">
-                <br>
-                <br>
-                <form id="bmiForm">
-                    <b>AGE:</b>
-                    <input type="number" id="age" min="2" max="120" required>
-                    <br>
-                    <br>
-                    <div>
-                        <b>GENDER:</b>
-                        <select name="gender" id="gender" required>
-                            <option value="MALE">MALE</option>
-                            <option value="FEMALE">FEMALE</option>
-                        </select>
-                    </div>
-                    <br>
-                    <b>HEIGHT (IN CM):</b>
-                    <input type="number" id="height" required>
-                    <br>
-                    <br>
-                    <b>WEIGHT (IN KG):</b>
-                    <input type="number" id="weight" required>
-                    <br>
-                    <br>
-                    <button type="button" onclick="calculateBMI()"><b>CALCULATE</b></button>
-                </form>
-                <br>
-                <p id="result"></p>
-                <p><button><b><a href="D:\HTML\FEE PreCautionsBMI.html">PRECAUTIONS</a></b></button></p>
-            </center>
-         
-        </div>
+        <h1>BMI Calculator</h1>
+
+        <form id="bmiForm">
+            <input type="number" id="age" placeholder="Age" min="2" max="120" required>
+            <select id="gender">
+                <option value="MALE">Male</option>
+                <option value="FEMALE">Female</option>
+            </select>
+            <input type="number" id="height" placeholder="Height (cm)" required>
+            <input type="number" id="weight" placeholder="Weight (kg)" required>
+
+            <button type="button" onclick="calculateBMI()">Calculate</button>
+        </form>
+
+        <p id="result"></p>
+
+        <a href="FEE PreCautionsBMI.html">
+            <button id="precautionsBtn">View Precautions</button>
+        </a>
     </div>
+
 
     <script>
         function calculateBMI() {
-            var age = document.getElementById("age").value;
-            var gender = document.getElementById("gender").value;
-            var height = document.getElementById("height").value;
-            var weight = document.getElementById("weight").value;
-    
-            var bmi = weight / ((height / 100) ** 2);
-            var resultElement = document.getElementById("result");
-    
-            if (bmi <= 17) {
-                resultElement.innerHTML = "Your BMI is: " + bmi.toFixed(2) + "<br><strong>Precaution: Your BMI is 17 or less. It's recommended to consult a healthcare professional.</strong>";
-            } else if (bmi >= 25) {
-                resultElement.innerHTML = "Your BMI is: " + bmi.toFixed(2) + "<br><strong>Precaution: Your BMI is 25 or higher. It's recommended to maintain a healthy lifestyle and consult a healthcare professional if needed.</strong>";
-            } else {
-                resultElement.innerHTML = "Your BMI is: " + bmi.toFixed(2);
+            let height = document.getElementById("height").value;
+            let weight = document.getElementById("weight").value;
+            let result = weight / ((height/100)**2);
+            let output = document.getElementById("result");
+            let precautionsBtn = document.getElementById("precautionsBtn");
+
+            if(result <= 17){
+                output.innerHTML = `BMI: ${result.toFixed(2)} <br>⚠️ Underweight - Consult a doctor`;
+                precautionsBtn.style.display = "inline-block";
+            }
+            else if(result >= 25){
+                output.innerHTML = `BMI: ${result.toFixed(2)} <br>⚠️ Overweight - Maintain healthy lifestyle`;
+                precautionsBtn.style.display = "inline-block";
+            }
+            else{
+                output.innerHTML = `BMI: ${result.toFixed(2)} <br>✅ Normal BMI`;
+                precautionsBtn.style.display = "none";
             }
         }
     </script>
