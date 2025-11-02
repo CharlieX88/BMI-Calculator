@@ -4,64 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRECAUTIONS</title>
-  <style>
-    b{
-        color:white;
 
-    }
-    h1{
-        color: whitesmoke;
-    }
-    h2{
-        color: rgb(242, 165, 9);
-    }
-    body{
-        background-repeat: no-repeat;
-        background-size: cover;
-    }    
-  </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1350&q=80");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: "Poppins", sans-serif;
+            color: white;
+        }
+
+        .overlay {
+            width: 100%;
+            min-height: 100vh;
+            background: rgba(0,0,0,0.55);
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .content-box {
+            max-width: 850px;
+            background: rgba(255,255,255,0.07);
+            padding: 40px;
+            border-radius: 18px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.25);
+            box-shadow: 0 0 35px rgba(0,0,0,0.7), 0 0 12px #00eaff;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 45px;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #00eaff, #ff00e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #00eaff;
+            text-shadow: 0 0 8px black;
+        }
+
+        p, li {
+            font-size: 18px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        ul {
+            margin-top: 8px;
+            padding-left: 20px;
+        }
+
+        ul li::marker {
+            color: #00eaff;
+            font-size: 20px;
+        }
+    </style>
 </head>
-<body background="https://miro.medium.com/v2/resize:fit:1200/1*k35uHPrbg5HMCo_-NnuK4w.jpeg"  >
-    <div class="bold"><font size="5px">
-    <center><h1>PRECAUTIONS</h1></center>
-    <br>
-    <p><h2>FOR UNDERWEIGHT: </h2></p>
-    <p><b>If your BMI range is 17 or less than 17 kg/m<sup>2</sup>(Underweight).</b></p>
-    <p><b>Risks associated with being Underweight:</b></p>
-    <ul>
-        <li><b>A decrease in immune function</b></li>
-        <li><b>Osteoporosis, a disease that causes bone weakness, increasing the risk of breaking a bone</b></li>
-        <li><b>Growth and development issues, particularly in children and teenagers</b></li>
-    </ul>  
-    
-    <p><h2>Solution:</h2></p>
-    <ul>
-        <li><b>Using healthy fats like olive oil or avocado</b></li>
-        <li><b>Adding skim milk powder to soups, stews and drinks</b></li>
-        <li><b>Adding protein powder to milkshakes</b></li>
-        <li><b>Doing some exercise to increase your appetite</b></li>
-    </ul>
 
-    <br>
-    <p><h2>FOR OVERWEIGHT:</h2></p>
-    
-    <p><b>If your BMI range is 25 or above 25 kg/m<sup>2</sup>(Overweight or obesity).</b></p>
-    <p><b>Risks associated with being Overweight:</b></p>
-    <ul>
-        <li><b>High blood pressure</b></li>
-        <li><b>Low quality of life</b></li>
-        <li><b>Body pains and difficulty with certain physical functions</b></li>
-        <li><b>Mental illnesses such as clinical depression, anxiety, and others</b></li>
-    </ul>  
-    
-    <p><h2>Solution:</h2></p>
-    <ul>
-        <li><b>Eat a wide variety of vegetables, fruits, grains, proteins and reduced-fat dairy foods each day.</b></li>
-        <li><b>Drink water instead of sugary drinks such as soft drinks and fruit juice.</b></li>
-        <li><b>Make the most of your local bush track, bike path, playground or sports field.</b></li>
-        <li><b>Focus on steps towards a healthy lifestyle rather than setting weight-loss goals.</b></li>
-    </ul>
-</font>
+<body>
+
+<div class="overlay">
+    <div class="content-box">
+
+        <h1>PRECAUTIONS</h1>
+
+        <h2>FOR UNDERWEIGHT</h2>
+        <p><b>If your BMI is 17 or below (Underweight)</b></p>
+
+        <p><b>Risks:</b></p>
+        <ul>
+            <li>Weak immune system</li>
+            <li>Bone weakness & high fracture risk</li>
+            <li>Poor growth (especially in teenagers)</li>
+        </ul>
+
+        <p><b>Solutions:</b></p>
+        <ul>
+            <li>Use healthy fats (olive oil, peanut butter, avocado)</li>
+            <li>Add protein to shakes & meals</li>
+            <li>Eat calorie-rich food smartly</li>
+            <li>Do strength training to build muscle</li>
+        </ul>
+
+        <h2>FOR OVERWEIGHT</h2>
+        <p><b>If your BMI is 25 or above (Overweight/Obesity)</b></p>
+
+        <p><b>Risks:</b></p>
+        <ul>
+            <li>High blood pressure</li>
+            <li>Joint and back pain</li>
+            <li>Low stamina & fatigue</li>
+            <li>Stress, anxiety or depression</li>
+        </ul>
+
+        <p><b>Solutions:</b></p>
+        <ul>
+            <li>Eat balanced foods (vegetables, protein, whole grains)</li>
+            <li>Drink only water, avoid sugary drinks</li>
+            <li>Walk or workout at least 30–45 mins daily</li>
+            <li>Focus on lifestyle, not just “weight loss”</li>
+        </ul>
+
+    </div>
 </div>
+
 </body>
 </html>
